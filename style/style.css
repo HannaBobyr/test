@@ -1,4 +1,5 @@
 body {
+  font-family: 'Crimson Pro', serif;
   margin: 0;
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -137,6 +138,31 @@ body {
   padding: 20px;
   background-color: #fff;
   border-radius: 20px;
+}
+
+.menu-btn {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	z-index:2;
+	overflow: hidden;
+  display: none;
+}
+.menu-btn span {
+	width: 30px;
+	height: 2px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #222222;
+	transition: all 0.5s;
+}
+.menu-btn span:nth-of-type(2) {
+	top: calc(50% - 5px);
+}
+.menu-btn span:nth-of-type(3) {
+	top: calc(50% + 5px);
 }
 
 .main {
@@ -325,7 +351,7 @@ body {
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
   display: grid;
   align-items: center;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr 3fr;
   column-gap: 100px;
 }
 
@@ -376,9 +402,11 @@ body {
   }
 }
 @media (max-width: 985px) {
+
   .container {
     max-width: 650px;
   }
+
   .main-btn {
     padding: 6px 20px;
     border: none;
@@ -523,5 +551,54 @@ body {
 @media (max-width: 700px){
   .container{
     max-width: 350px;
+  }
+  .menu-btn{
+    display: block;
+  }
+  .user-collection{
+    display: none;
+  }
+  .user-name{
+    display: none;
+  }
+  .nav{
+    display: none;
+  }
+  .main{
+    flex-direction: column;
+    align-items: center;
+    padding-top: 200px;
+    padding-bottom: 300px;
+  }
+  .spots-list{
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+  }
+  .img-sea{
+    display: none;
+  }
+  .about-sea{
+    grid-template-columns: 1fr;
+    padding: 40px 40px;
+    background-image: url(../img/sea.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .sea-description{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+  }
+  .networks{
+    display: none;
+  }
+  .mountain-item{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+  .logo{
+    padding-right: 50px;
   }
 }
